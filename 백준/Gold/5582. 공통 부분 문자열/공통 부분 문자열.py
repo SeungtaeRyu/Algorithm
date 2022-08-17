@@ -3,7 +3,7 @@ b = input()     # ECADADABRBCRDARA      길이 16
 
 LCS = [[0 for _ in range(len(b)+1)] for _ in range(len(a)+1)]   # 0 ~ 11 x 0 ~ 15
 
-
+# count = 0
 for i in range(len(a)):                     # 0 ~ 10 까지 반복
     for j in range(len(b)):                 # 0 ~ 15 까지 반복
         if a[i] == b[j]:
