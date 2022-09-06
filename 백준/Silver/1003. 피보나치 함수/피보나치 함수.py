@@ -1,18 +1,15 @@
 import sys
-dp = [[1, 0], [0, 1]]
-
-
-def fib(n):
-    if n == 0 or n == 1:
-        return
-    for _ in range(n - 1):
-        dp.append((dp[-1][0] + dp[-2][0], dp[-1][1] + dp[-2][1] ))
-    return
-
-
 input = sys.stdin.readline
-T = int(input().rstrip())
-case = [int(input().rstrip()) for _ in range(T)]
-fib(max(case))
-for c in case:
-    print(dp[c][0], dp[c][1])
+
+T = int(input())
+for tc in range(1, T+1):
+    n = int(input())
+    dp_count0 = [0] * 41
+    dp_count1 = [0] * 41
+
+    dp_count0[0] = 1
+    dp_count1[1] = 1
+    for i in range(2, n+1):
+        dp_count0[i] = dp_count0[i-1]+dp_count0[i-2]
+        dp_count1[i] = dp_count1[i-1]+dp_count1[i-2]
+    print(dp_count0[n], dp_count1[n])
