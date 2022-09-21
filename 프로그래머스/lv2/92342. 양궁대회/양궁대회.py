@@ -18,9 +18,9 @@ def f(index, s, e, info, lion):
         ckdl = l_score - a_score    # 점수 계산 끝 점수 차이 저장
         if ckdl > max_ckdl:                 # 점수 차이가 여태까지 맥스 점수차이보다 크면?
             max_ckdl = ckdl                 # 정답 갱신!
-            ans = lion[:]   
+            ans = lion[:]
         elif ckdl == max_ckdl:      # 점수 차이가 맥스 점수차이랑 같으면?
-            for i in range(10, -1, -1):         # 끝자리부터 내려오면서 
+            for i in range(10, -1, -1):         # 끝자리부터 내려오면서
                 if lion[i] == 0 and ans[i] == 0:    # 화살 개수가 둘 다 0 이 아닌 첫 i 를 찾아서
                     pass
                 elif lion[i] > ans[i]:              # 새로운 정답의 화살개수가 더 크면 정답 갱신
