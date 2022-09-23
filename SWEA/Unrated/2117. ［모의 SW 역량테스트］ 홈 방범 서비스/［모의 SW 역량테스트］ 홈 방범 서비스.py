@@ -13,6 +13,8 @@ for tc in range(1, T+1):
             visited[i][j] = 1
             while q:
                 x, y = q.popleft()
+                if visited[i][j] == 21:
+                    break
                 for dx, dy in [[-1, 0], [1, 0], [0, -1], [0, 1]]:
                     nx = x + dx
                     ny = y + dy
