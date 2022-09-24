@@ -1,8 +1,6 @@
 import sys
 input = sys.stdin.readline
-
 n = int(input())
-
 tree = {i: [] for i in range(n)}
 info = list(map(int, input().split()))
 delete_node = int(input())
@@ -13,11 +11,9 @@ for i in range(n):
     if i == delete_node:
         continue
     tree[info[i]].append(i)
-
 if root == delete_node:
     print(0)
 else:
-    visited = [False] * n
     stack = [root]
     ans = 0
     while stack:
@@ -27,5 +23,3 @@ else:
         for next_node in tree[now_node]:
             stack.append(next_node)
     print(ans)
-
-
