@@ -1,3 +1,4 @@
+# 위상정렬 개꿀
 import sys
 from collections import deque
 input = sys.stdin.readline
