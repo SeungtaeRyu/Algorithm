@@ -22,7 +22,7 @@ def solution(n, paths, gates, summits):
                 return
 
             # 봉우리를 찾았을 때
-            if now in summits:
+            if summits_dic[now]:
                 if maxInten < minIntensity:
                     minIntensity = maxInten
                     summit = now
@@ -46,7 +46,10 @@ def solution(n, paths, gates, summits):
         gates_dic[u] = True
 
     # 이건 그냥 해봄 안해도 되려나?
-    summits = set(summits)
+    # summits = set(summits)
+    summits_dic = {i: False for i in range(1, n+1)}
+    for u in summits:
+        summits_dic[u] = True
 
     # 경로 정보 저장
     adj = {i: [] for i in range(1, n+1)}
