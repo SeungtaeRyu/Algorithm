@@ -6,7 +6,7 @@ trees = list(map(int, input().split()))
 
 start = 1
 end = max(trees)
-while start <= end:
+while start != end:
     mid = (start + end) // 2
 
     count = 0
@@ -17,6 +17,6 @@ while start <= end:
     if count >= m:
         start = mid + 1
     else:
-        end = mid - 1
+        end = mid
 
-print(end)
+print(start-1)
