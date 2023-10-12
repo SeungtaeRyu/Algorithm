@@ -2,8 +2,10 @@ import java.util.*;
 
 class Solution {
     public int solution(String[] user_id, String[] banned_id) {
-		Map<String, List<String>> candidate = new HashMap<>();
-
+        /** 
+         * *을 제외한 모든 문자가 같은 후보군들을 딕셔너리<리스트>로 저장 (key = *rodo, value = [frodo, prodo])
+         */
+        Map<String, List<String>> candidate = new HashMap<>();
 		for (String banUser: banned_id) {
 			candidate.put(banUser, new ArrayList<>());
 			for (String user: user_id) {
@@ -23,13 +25,11 @@ class Solution {
 			}
 		}
 
+        /**
+         * 정답 set 찾기
+         */
 		Set<Set<String>> answerList = new HashSet<>();
-
-		int n = banned_id.length;
-		findAllCombination(answerList, candidate, banned_id, new HashSet<>(), 0, n);
-
-		System.out.println("answerList = " + answerList);
-
+		findAllCombination(answerList, candidate, banned_id, new HashSet<>(), 0, banned_id.length);
 
 		return answerList.size();
 	}
